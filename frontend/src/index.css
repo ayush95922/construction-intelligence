@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", system-ui, sans-serif;
+  --color-ink: #0f172a;
+  --color-steel: #1e293b;
+  --color-mute: #64748b;
+  --color-line: #e2e8f0;
+  --color-concrete: #f8fafc;
+  --color-paper: #ffffff;
+  --color-safety: #f97316;
+  --color-safety-d: #ea580c;
+  --color-good: #16a34a;
+  --color-warn: #d97706;
+  --color-bad: #dc2626;
+}
+
+body {
+  background: var(--color-concrete);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-safety);
+  outline-offset: 2px;
+}
+
+.tape {
+  height: 5px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ea580c 0 14px,
+    #0f172a 14px 28px
+  );
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.015em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* Subtle blueprint grid overlay for modern engineering aesthetic */
+.blueprint-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
